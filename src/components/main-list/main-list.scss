@@ -1,0 +1,15 @@
+.main {
+  &__item {
+    max-width: 237px;
+    width: 100%;
+    background: #f9f9f9;
+    border-radius: 8px;
+    &--title {
+      font-family: Arial;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 120%;
+      color: #24262d;
+    }
+  }
+}

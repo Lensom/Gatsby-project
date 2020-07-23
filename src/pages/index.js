@@ -1,14 +1,20 @@
 import React from "react"
 
-import Header from '../components/header';
+import Header from "../components/header"
+import MainList from "../components/main-list"
 
-import '../style.css';
-import '../default.scss';
+import "../style.css"
+import "../default.scss"
 
 const IndexPage = () => {
   return (
-    <div className="wrapper">
-      <Header />
+    <div className="index-page">
+      <div className="wrapper">
+        <Header />
+      </div>
+      <div className="wrapper">
+        <MainList />
+      </div>
     </div>
   )
 }
