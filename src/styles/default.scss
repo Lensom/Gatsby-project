@@ -1,0 +1,43 @@
+.wrapper {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  color: $dark;
+  @media screen and (max-width: 480px) {
+    text-align: center;
+  }
+}
+
+.text {
+  font-family: "Helvetica Neue Roman";
+  font-size: 14px;
+  line-height: 82%;
+  color: $dark;
+  opacity: 0.5;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  left: 25px;
+  top: 0px;
+  &.active {
+    visibility: visible;
+  }
+}

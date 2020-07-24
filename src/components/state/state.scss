@@ -1,0 +1,44 @@
+.state {
+  &__eval {
+    text-transform: capitalize;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 140%;
+    color: #24262d;
+    opacity: 0.5;
+    margin-left: 10px;
+  }
+  &__procent {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    color: #24262d;
+  }
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__wrapper {
+    margin-top: 26px;
+  }
+  &__status {
+    margin-bottom: 14px;
+  }
+  &__line {
+    height: 4px;
+    width: 100%;
+    background: #000;
+    margin-bottom: 7px;
+    &--good {
+      background: #03db5f;
+    }
+    &--middle {
+      background: #f2c94c;
+    }
+    &--bad {
+      background: #eb5757;
+    }
+  }
+}

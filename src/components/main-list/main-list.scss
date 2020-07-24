@@ -1,15 +1,67 @@
 .main {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 998px) {
+      flex-wrap: wrap;
+    }
+  }
   &__item {
     max-width: 237px;
     width: 100%;
     background: #f9f9f9;
     border-radius: 8px;
-    &--title {
-      font-family: Arial;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 120%;
-      color: #24262d;
+    padding: 36px 36px 20px;
+    margin-right: 24px;
+    &.active {
+      max-width: 417px;
+      min-width: 343px;
+      @media screen and (max-width: 998px) {
+        max-width: none;
+        width: 67%;
+        min-width: auto;
+      }
+      @media screen and (max-width: 480px) {
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 20px 15px;
+    }
+    @media screen and (max-width: 998px) {
+      margin-right: 0;
+      margin-bottom: 30px;
+      width: 32.3%;
+      max-width: none;
+    }
+    @media screen and (max-width: 998px) {
+      width: 30%;
+    }
+    @media screen and (max-width: 480px) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    &:nth-child(4n) {
+      margin-right: 0;
+      @media screen and (max-width: 998px) {
+        width: 47%;
+        max-width: none;
+      }
+      @media screen and (max-width: 480px) {
+        width: 100%;
+      }
+    }
+    &:nth-child(3n) {
+      @media screen and (max-width: 998px) {
+        width: 49%;
+        max-width: none;
+        margin-right: 15px;
+      }
+      @media screen and (max-width: 480px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
   }
 }

@@ -1,0 +1,40 @@
+.menu {
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 82%;
+    color: rgba(36, 38, 45, 0.5);
+    @media screen and (max-width: 768px) {
+      padding: 5px;
+    }
+  }
+  &__icon {
+    margin-right: 10px;
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+  &__item {
+    margin-left: 41px;
+    @media screen and (max-width: 768px) {
+      margin-left: 20px;
+    }
+    span {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

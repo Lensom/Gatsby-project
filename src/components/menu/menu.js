@@ -1,31 +1,18 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faReact } from "@fortawesome/free-brands-svg-icons"
 
 import "./menu.scss"
 
-const Menu = () => {
-  const items = [
-    {
-      name: "Profile",
-      icon: "",
-      url: "/profile",
-    },
-    {
-      name: "Settings",
-      icon: "",
-      url: "/settings",
-    },
-  ]
-
+const Menu = ({ items }) => {
   return (
     <ul className="menu__list">
-      {items.map(({ name, icon, url }) => {
+      {items.map(({ name, icon, url }, idx) => {
         return (
-          <div className="menu__item">
-            <a href={url}>
-              <div className="menu__icon">{icon}</div>
-              {name}
+          <div className="menu__item" key={idx}>
+            <a href={url} className="menu__link">
+              <div className="menu__icon">
+                <img src={icon} alt="" />
+              </div>
+              <span>{name}</span>
             </a>
           </div>
         )

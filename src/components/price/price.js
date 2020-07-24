@@ -5,7 +5,7 @@ const Price = ({ data }) => {
   const { price, avg } = data
   return (
     <div className="price">
-      <h2 className="price__title title">Collection Price</h2>
+      <h2 className="price__title title">Collection price</h2>
       <div className="price__wrapper">
         <div className="price__main">{price}</div>
         <div className="price__avg">
