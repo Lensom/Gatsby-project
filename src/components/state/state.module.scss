@@ -1,4 +1,5 @@
 .state {
+  position: relative;
   &__eval {
     text-transform: capitalize;
     font-family: Arial;
@@ -31,14 +32,5 @@
     width: 100%;
     background: #000;
     margin-bottom: 7px;
-    &--good {
-      background: #03db5f;
-    }
-    &--middle {
-      background: #f2c94c;
-    }
-    &--bad {
-      background: #eb5757;
-    }
   }
 }

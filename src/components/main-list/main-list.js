@@ -1,10 +1,12 @@
 import React from "react"
-import "./main-list.scss"
+import styles from "./main-list.module.scss"
 
 import Profile from "../profile"
 import Books from "../books"
 import State from "../state"
 import Price from "../price"
+
+import classNames from "classnames"
 
 const MainList = () => {
   // Вынести всю инфу в отдельный сторедж
@@ -53,18 +55,20 @@ const MainList = () => {
     avg: "121.5 €",
   }
 
+  const activeClass = classNames(styles.main__item, styles.active)
+
   return (
-    <div className="main__list">
-      <div className="main__item active">
+    <div className={styles.main__list}>
+      <div className={activeClass}>
         <Profile info={userInfo} />
       </div>
-      <div className="main__item">
+      <div className={styles.main__item}>
         <Books info={booksInfo} />
       </div>
-      <div className="main__item">
+      <div className={styles.main__item}>
         <State data={stateData} />
       </div>
-      <div className="main__item">
+      <div className={styles.main__item}>
         <Price data={priceData} />
       </div>
     </div>

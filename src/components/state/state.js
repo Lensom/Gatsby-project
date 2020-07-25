@@ -1,26 +1,28 @@
 import React, { useState } from "react"
-import "./state.scss"
+import styles from "./state.module.scss"
+
+import classNames from "classnames"
+
+const title = classNames("title")
 
 const State = ({ data }) => {
   let [width, setWidth] = useState(0)
 
   setWidth = procent => {
-    return (width = procent * 1.6)
+    return (width = procent * 1.6) + "px"
   }
   return (
-    <div className="state">
-      <h2 className="state__title title">State</h2>
-      <div className="state__wrapper">
+    <div className={styles.state}>
+      <h2 className={title}>State</h2>
+      <div className={styles.state__wrapper}>
         {data.map(({ procent, eval: evaluation }, idx) => {
+          const color = classNames(styles.state__line, evaluation)
           return (
-            <div className="state__status" key={idx}>
-              <div
-                className={`state__line state__line--${evaluation}`}
-                style={{ width: setWidth(procent) + "px" }}
-              ></div>
-              <div className="state__info">
-                <div className="state__procent">{procent}%</div>
-                <div className="state__eval">{evaluation}</div>
+            <div className={styles.state__status} key={idx}>
+              <div className={color} style={{ width: setWidth(procent) }}></div>
+              <div className={styles.state__info}>
+                <div className={styles.state__procent}>{procent}%</div>
+                <div className={styles.state__eval}>{evaluation}</div>
               </div>
             </div>
           )

@@ -1,5 +1,7 @@
 import React, { useState } from "react"
-import "./profile.scss"
+import styles from "./profile.module.scss"
+
+import classNames from "classnames"
 
 const Profile = ({ info }) => {
   const { name, imageUrl, id, date, owners, logoOwners } = info
@@ -14,47 +16,50 @@ const Profile = ({ info }) => {
     return owners == 0 || owners > 1 ? `+${owners} owners` : `+${owners} owner`
   }
 
+  const activeStyles = classNames("tooltiptext", {
+    active: isHovered,
+  })
+  const title = classNames("title")
+
   return (
-    <div className="profile">
-      <div className="profile__wrapper">
-        <div className="profile__name title">Hello, {name}</div>
-        <div className="profile__information--wrapper">
+    <div className={styles.profile}>
+      <div className={styles.profile__wrapper}>
+        <h2 className={title}>Hello, {name}</h2>
+        <div className={styles.profile__informationWrapper}>
           <span
-            className="profile__information"
+            className={styles.profile__information}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             i
           </span>
-          <div className={isHovered ? `tooltiptext active` : `tooltiptext`}>
-            Tooltip
-          </div>
+          <div className={activeStyles}>Tooltip</div>
         </div>
       </div>
-      <div className="profile__info">
-        <div className="profile__image">
-          <img src={imageUrl} alt="" />
+      <div className={styles.profile__info}>
+        <div className={styles.profile__image}>
+          <img src={imageUrl} alt="Profile Image" />
         </div>
-        <div className="profile__info--wrapper">
-          <div className="profile__id profile__text">
+        <div className={styles.profile__infoWrapper}>
+          <div className={`${styles.profile__id} ${styles.profile__text}`}>
             ID: <span>{id}</span>
           </div>
-          <div className="profile__date profile__text">
+          <div className={`${styles.profile__date} ${styles.profile__text}`}>
             Registration date: <span>{date}</span>
           </div>
         </div>
       </div>
-      <div className="profile__owners">
-        <div className="profile__owners--images">
+      <div className={styles.profile__owners}>
+        <div className={styles.profile__ownersImages}>
           {logoOwners.map((el, idx) => {
             return (
-              <div className="profile__owners--image" key={idx}>
+              <div className={styles.profile__ownersImage} key={idx}>
                 <img src={el} />
               </div>
             )
           })}
         </div>
-        <div className="profile__owners--count">{ownerCustomize()}</div>
+        <div className={styles.profile__ownersCount}>{ownerCustomize()}</div>
       </div>
     </div>
   )

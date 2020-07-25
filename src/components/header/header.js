@@ -3,12 +3,12 @@ import React from "react"
 import Logotype from "../logotype"
 import Menu from "../menu"
 
-import "./header.scss"
+import styles from "./header.module.scss"
 
 const Header = ({ items }) => {
   return (
-    <div className="header">
-      <div className="header__wrapper">
+    <div className={styles.header}>
+      <div className={styles.header__wrapper}>
         <Logotype />
         <Menu items={items} />
       </div>

@@ -1,16 +1,16 @@
 import React from "react"
 
-import "./menu.scss"
+import styles from "./menu.module.scss"
 
 const Menu = ({ items }) => {
   return (
-    <ul className="menu__list">
+    <ul className={styles.menu__list}>
       {items.map(({ name, icon, url }, idx) => {
         return (
-          <div className="menu__item" key={idx}>
-            <a href={url} className="menu__link">
-              <div className="menu__icon">
-                <img src={icon} alt="" />
+          <div className={styles.menu__item} key={idx}>
+            <a href={url} className={styles.menu__link}>
+              <div className={styles.menu__icon}>
+                <img src={icon} alt={name} />
               </div>
               <span>{name}</span>
             </a>

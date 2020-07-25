@@ -1,16 +1,20 @@
 import React from "react"
-import "./books.scss"
+import styles from "./books.module.scss"
+
+import classNames from "classnames"
+
+const title = classNames("title")
 
 const Books = ({ info }) => {
   return (
-    <div className="books">
-      <div className="books__title title">Books</div>
-      <div className="books__list">
+    <div className={styles.books}>
+      <h2 className={title}>Books</h2>
+      <div className={styles.books__list}>
         {info.map(({ title, count }, idx) => {
           return (
-            <div className="books__item" key={idx}>
-              <div className="books__count">{count}</div>
-              <div className="books__name">{title}</div>
+            <div className={styles.books__item} key={idx}>
+              <div className={styles.books__count}>{count}</div>
+              <div className={styles.books__name}>{title}</div>
             </div>
           )
         })}
