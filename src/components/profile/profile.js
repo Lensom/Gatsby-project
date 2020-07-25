@@ -13,7 +13,7 @@ const Profile = ({ info }) => {
 
   // Теоретически до 10.
   const ownerCustomize = () => {
-    return owners == 0 || owners > 1 ? `+${owners} owners` : `+${owners} owner`
+    return owners === 0 || owners > 1 ? `+${owners} owners` : `+${owners} owner`
   }
 
   const activeStyles = classNames("tooltiptext", {
@@ -30,6 +30,8 @@ const Profile = ({ info }) => {
             className={styles.profile__information}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            role="button"
+            tabIndex="0"
           >
             i
           </span>
@@ -38,7 +40,7 @@ const Profile = ({ info }) => {
       </div>
       <div className={styles.profile__info}>
         <div className={styles.profile__image}>
-          <img src={imageUrl} alt="Profile Image" />
+          <img src={imageUrl} alt="Profile" />
         </div>
         <div className={styles.profile__infoWrapper}>
           <div className={`${styles.profile__id} ${styles.profile__text}`}>
@@ -54,7 +56,7 @@ const Profile = ({ info }) => {
           {logoOwners.map((el, idx) => {
             return (
               <div className={styles.profile__ownersImage} key={idx}>
-                <img src={el} />
+                <img src={el} alt="Owner" />
               </div>
             )
           })}

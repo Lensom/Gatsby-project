@@ -9,7 +9,8 @@ const State = ({ data }) => {
   let [width, setWidth] = useState(0)
 
   setWidth = procent => {
-    return (width = procent * 1.6) + "px"
+    width = procent * 1.6
+    return width + "px"
   }
   return (
     <div className={styles.state}>
